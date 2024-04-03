@@ -25,14 +25,13 @@ class ShowData : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_show_data)
 
-
         if (intent!=null)
         {
+
             showData = intent.extras?.getSerializable("data")as Data
             binding.showName.text = showData.name
             binding.showEmail.text = showData.email
             Glide.with(this).load(showData.profile_picture).into(binding.showImage)
-
 
         }
 
